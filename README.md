@@ -32,8 +32,7 @@ An overview of the phases and subtasks that will be required to complete the pro
 - [x] Build the `InformationM`-only implementation
 - [x] Add initial styles
 - [x] Write up installation instructions for README
-- [ ] Prep for first deployment to rebeccashoptaw.dev/archive-visualizer
-- [ ] First deploy!! Via `npm run deploy`
+- [x] Prep for and implement first deployment to `rebeccashoptaw.dev/archive-visualizer`
 
 **Phase Two: Generalize the Project**
 - [ ] Adjust unit tests as needed to account for new variable structure
