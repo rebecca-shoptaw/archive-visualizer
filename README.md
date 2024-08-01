@@ -35,10 +35,11 @@ An overview of the phases and subtasks that will be required to complete the pro
 - [x] Prep for and implement first deployment to `rebeccashoptaw.dev/archive-visualizer`
 
 **Phase Two: Generalize the Project**
-- [ ] Adjust unit tests as needed to account for new variable structure
-- [ ] Install `React-Router` and restructure components to use URL parameters, incorporating fail safety, and restricting display to only `MovingImage`-type ID's
-- [ ] Write tests for a new homepage to live at `/` where users can enter the ID manually and hit a button to go to the relevant URL
-- [ ] Build & test the homepage as planned
+- [x] Adjust unit tests as needed to account for new variable structure
+- [x] Install `React-Router` and restructure components to use URL parameters
+- [x] Incorporate fail safety
+- [ ] Restrict display to only IDs with `movies` media type
+- [ ] Build & test the homepage a new homepage to live at `/` where users can enter the ID manually and hit a button to go to the relevant URL
 - [ ] Style the homepage
 - [ ] Add & test functionality and new components for more item types, such as audio files, books, etc.
 
