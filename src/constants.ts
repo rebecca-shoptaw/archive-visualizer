@@ -1,0 +1,48 @@
+import { MetadataObject } from "./types";
+
+export const INCLUDE_KEYS: string[] = [
+  "date",
+  "licenseurl",
+  "subject",
+  "publisher",
+  "publicdate",
+  "ccnum",
+  "collectionid",
+  "color",
+  "identifier",
+  "numeric_id",
+  "proddate",
+  "runtime",
+  "sound",
+  "type",
+];
+
+/* For testing with vitest */
+export const MOCK_METADATA: MetadataObject = {
+  mediatype: "movies",
+  identifier: "InformationM",
+  publisher: "Eames (Charles And Ray)",
+  description: "InformationM Test Description",
+  date: "1958",
+  licenseurl: "http://creativecommons.org/licenses/publicdomain/",
+  color: "color",
+  sound: "sound",
+  collection: "prelinger",
+  title: "Information Machine, The",
+  sponsor: "IBM",
+  pick: "0",
+  runtime: "00:09:44",
+  updatedate: "2005-01-13 09:36:44",
+  updater: "AV Geek Skip",
+  subject: "need keyword",
+  numeric_id: "3254",
+  type: "MovingImage",
+  proddate: "1958",
+  collectionid: "InformationM",
+  publicdate: "2007-03-01 10:46:58",
+  backup_location: "ia903600_31",
+  closed_captioning: "no",
+  addeddate: "2007-03-01 10:46:58",
+  whisper_asr_module_version: "20230805.01",
+  ccnum: "asr",
+};

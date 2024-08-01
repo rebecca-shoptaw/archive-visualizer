@@ -7,7 +7,7 @@ An overview of the phases and subtasks that will be required to complete the pro
 **Phase One: Initial Project Implementation**
 - [x] Assemble basic project component structure and settings
 - [x] Write simple unit tests for initial `InformationM`-only implementation
-- [ ] Build the `InformationM`-only implementation
+- [x] Build the `InformationM`-only implementation
 - [ ] Add initial styles
 - [ ] Write up installation instructions for README
 - [ ] Prep for first deployment to rebeccashoptaw.dev/archive-visualizer
