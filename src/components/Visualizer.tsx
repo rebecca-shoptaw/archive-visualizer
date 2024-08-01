@@ -1,47 +1,47 @@
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import styles from "./Visualizer.module.css";
+import { MetadataObject } from "../types";
 import ContentDescription from "./ContentDescription";
 import ContentMetadata from "./ContentMetadata";
 import ContentPlayer from "./ContentPlayer";
-import { useState, useEffect } from "react";
-import styles from "./Visualizer.module.css";
-import { MetadataObject } from "../types";
 
 const Visualizer = () => {
-  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [metadata, setMetadata] = useState<null | MetadataObject>(null);
-  const CONTENT_ID = "InformationM";
+  const { id } = useParams();
 
-  const fetchMetadata = () => {
-    fetch(`https://archive.org/metadata/${CONTENT_ID}`)
+  useEffect(() => {
+    fetch(`https://archive.org/metadata/${id}`)
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        setMetadata(data.metadata);
+        if (data.metadata) {
+          setMetadata(data.metadata);
+        } else setError(true);
       })
-      .catch((err) => console.log(err));
-  };
-
-  useEffect(() => {
-    setLoading(true);
-    fetchMetadata();
-    setLoading(false);
-  }, []);
+      .catch((err) => {
+        console.log(err);
+        setError(true);
+      });
+  }, [id]);
 
   return (
     <main>
       <section className={styles.visualizer}>
-        {loading ? (
-          <p className="loading-indicator">Loading...</p>
-        ) : metadata ? (
+        {error ? (
+          <p>Oh no! We couldn't find that content.</p>
+        ) : metadata && id ? (
           <>
-            <ContentPlayer contentId={CONTENT_ID} />
+            <ContentPlayer contentId={id} />
             <section className={styles.visualizer__info}>
               <ContentDescription data={metadata} />
               <ContentMetadata data={metadata} />
             </section>
           </>
         ) : (
-          <p>Oh no! We couldn't find that content.</p>
+          <p className="loading-indicator">Loading...</p>
         )}
       </section>
     </main>
