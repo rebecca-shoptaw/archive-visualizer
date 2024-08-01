@@ -10,17 +10,21 @@ const Visualizer = () => {
   const [metadata, setMetadata] = useState<null | MetadataObject>(null);
   const CONTENT_ID = "InformationM";
 
-  useEffect(() => {
-    setLoading(true);
+  const fetchMetadata = () => {
     fetch(`https://archive.org/metadata/${CONTENT_ID}`)
       .then((res) => {
         return res.json();
       })
       .then((data) => {
         setMetadata(data.metadata);
-        setLoading(false);
       })
       .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    setLoading(true);
+    fetchMetadata();
+    setLoading(false);
   }, []);
 
   return (
