@@ -1,24 +1,29 @@
 import { MetadataObject } from "./types";
 
+// List of all keys to render in the metadata section, if a corresponding value exists for the work
 export const INCLUDE_KEYS: string[] = [
   "date",
   "licenseurl",
   "subject",
   "publisher",
   "publicdate",
+  "call_number",
   "ccnum",
+  "collection",
   "collectionid",
   "closed_captioning",
   "color",
   "identifier",
   "numeric_id",
   "proddate",
+  "rights",
   "runtime",
+  "scanner",
   "sound",
   "type",
 ];
 
-/* For testing with vitest */
+// For testing with vitest
 export const MOCK_METADATA: MetadataObject = {
   mediatype: "movies",
   identifier: "InformationM",

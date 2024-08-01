@@ -1,6 +1,7 @@
 import { MetadataObject } from "../types";
 import styles from "./ContentMetadata.module.css";
 import { INCLUDE_KEYS } from "../constants";
+import toPunctuatedString from "../utils/toPunctuatedString";
 
 const ContentMetadata = ({ data }: { data: MetadataObject }) => {
   return (
@@ -10,7 +11,9 @@ const ContentMetadata = ({ data }: { data: MetadataObject }) => {
           data[key] && (
             <p key={key}>
               <span className={styles.metadata__key}>{key.toUpperCase()}</span>:{" "}
-              <span className={styles.metadata__value}>{data[key]}</span>
+              <span className={styles.metadata__value}>
+                {toPunctuatedString(data[key])}
+              </span>
             </p>
           )
       )}

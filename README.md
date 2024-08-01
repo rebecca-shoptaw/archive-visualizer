@@ -55,6 +55,7 @@ An overview of the phases and subtasks that will be required to complete the pro
 **Phase Five: Bells and Whistles**
 - [ ] Bulk up project README write-up
 - [ ] Add custom rendering to detect/style license url
+- [x] Add custom rendering for array metadata
 - [ ] Add snazzy loading indicators
 - [ ] Add custom titles for each page via `react-helmet`
 - [ ] Add animations, etc. as time allows

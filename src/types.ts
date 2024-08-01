@@ -1,1 +1,1 @@
-export type MetadataObject = { [key: string]: string };
+export type MetadataObject = { [key: string]: string|string[] };
