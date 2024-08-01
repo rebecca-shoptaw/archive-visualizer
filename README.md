@@ -38,20 +38,24 @@ An overview of the phases and subtasks that will be required to complete the pro
 - [x] Adjust unit tests as needed to account for new variable structure
 - [x] Install `React-Router` and restructure components to use URL parameters
 - [x] Incorporate fail safety
-- [ ] Restrict display to only IDs with `movies` media type
-- [ ] Build & test the homepage a new homepage to live at `/` where users can enter the ID manually and hit a button to go to the relevant URL
-- [ ] Style the homepage
 - [ ] Add & test functionality and new components for more item types, such as audio files, books, etc.
+- [ ] Add fail safety for un-renderable item types (if needed)
 
 **Phase Three: Add More Content**
 - [ ] Add & test functionality to display reviews
 - [ ] Add & test functionality to display related works, likely using a carousel plugin
-- [ ] Bulk up project README write-up
+- [ ] Build & test the homepage a new homepage to live at `/` where users can enter the ID manually and hit a button to go to the relevant URL
+- [ ] Style the homepage
 
 **Phase Four: Refactor**
 - [ ] Clean up component structure as needed, dividing into sub-components and using custom hooks if necessary
 - [ ] Improve accessibility where possible
+- [ ] Incorporate more tests, including fetch mocking
 
 **Phase Five: Bells and Whistles**
-- [ ] Add more fun stylistic touches, such as snazzy loading indicators, custom titles for each page via `react-helmet`, animations, etc. as time allows
+- [ ] Bulk up project README write-up
+- [ ] Add custom rendering to detect/style license url
+- [ ] Add snazzy loading indicators
+- [ ] Add custom titles for each page via `react-helmet`
+- [ ] Add animations, etc. as time allows
 
