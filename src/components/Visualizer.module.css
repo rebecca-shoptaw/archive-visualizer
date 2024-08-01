@@ -1,0 +1,35 @@
+.visualizer {
+  width: 80vw;
+  min-height: 100vh;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.visualizer__contentPlayer {
+  border: 0px;
+  border-radius: 10px;
+}
+
+.visualizer__info {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+@media only screen and (max-width: 550px) {
+  .visualizer {
+    width: calc(100vw - 40px);
+  }
+
+  .visualizer__info {
+    flex-direction: column;
+  }
+
+  .visualizer__info > * {
+    max-width: 100%;
+  }
+}

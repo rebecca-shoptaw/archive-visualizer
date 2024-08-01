@@ -1,11 +1,31 @@
 :root {
   --archive-blue: #4b64ff;
   --archive-black: #000;
+  --archive-light-gray: #666;
+  --archive-off-white: #bbb;
   --archive-white: #fff;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 html {
   background-color: var(--archive-black);
   color: var(--archive-white);
   font-family: "DM Sans", "sans-serif";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.loading-indicator {
+  animation: 1s ease-in-out infinite alternate fadeIn;
 }

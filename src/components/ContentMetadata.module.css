@@ -1,0 +1,13 @@
+.metadata {
+  max-width: 30%;
+  border-radius: 10px;
+  border: 1px solid var(--archive-light-gray);
+  padding: 0px 20px;
+  align-self: flex-start;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+.metadata__key {
+  font-weight: 700;
+}
