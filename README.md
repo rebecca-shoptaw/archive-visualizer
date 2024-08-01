@@ -5,9 +5,9 @@ A new way to visualize content from the vast [Internet Archive](https://archive.
 An overview of the phases and subtasks that will be required to complete the project.
 
 **Phase One: Initial Project Implementation**
-- [ ] Assemble basic project component structure and settings
+- [x] Assemble basic project component structure and settings
 - [ ] Write simple unit tests for initial `InformationM`-only implementation
-- [ ] Build & test the `InformationM`-only implementation
+- [ ] Build the `InformationM`-only implementation
 - [ ] Add initial styles
 - [ ] Write up installation instructions for README
 - [ ] Prep for first deployment to rebeccashoptaw.dev/archive-visualizer
@@ -31,5 +31,5 @@ An overview of the phases and subtasks that will be required to complete the pro
 - [ ] Improve accessibility where possible
 
 **Phase Five: Bells and Whistles**
-- [ ] Add more fun stylistic touches, such as snazzy loading indicators, animations, etc. as time allows
+- [ ] Add more fun stylistic touches, such as snazzy loading indicators, custom titles for each page via `react-helmet`, animations, etc. as time allows
 

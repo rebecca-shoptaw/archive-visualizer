@@ -1,4 +1,11 @@
 :root {
-    --archive-blue: #4b64ff;
+  --archive-blue: #4b64ff;
+  --archive-black: #000;
+  --archive-white: #fff;
 }
 
+html {
+  background-color: var(--archive-black);
+  color: var(--archive-white);
+  font-family: "DM Sans", "sans-serif";
+}
