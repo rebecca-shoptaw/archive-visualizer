@@ -8,6 +8,7 @@ export const INCLUDE_KEYS: string[] = [
   "publicdate",
   "ccnum",
   "collectionid",
+  "closed_captioning",
   "color",
   "identifier",
   "numeric_id",

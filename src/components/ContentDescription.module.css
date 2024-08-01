@@ -1,3 +1,9 @@
+.description {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 0;
+}
+
 .description__title {
   margin-top: 0px;
   text-shadow: var(--archive-blue) 0px 0 10px;
