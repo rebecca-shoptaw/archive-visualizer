@@ -1,6 +1,28 @@
 # Archive Visualizer
 A new way to visualize content from the vast [Internet Archive](https://archive.org/) catalog.
 
+## Getting Started Guide
+To get this repository up and running locally, you can simply run the following commands:
+```
+# navigate to the folder where you'd like to save the code
+cd path/to/your/folder
+
+# clone the repository
+git clone https://github.com/rebecca-shoptaw/archive-visualizer.git
+
+# enter the project directory
+cd archive-visualizer
+
+# install project dependecies
+npm install
+
+# begin running locally
+npm run dev
+
+# run unit tests
+npm run test
+```
+
 ## Project Outline
 An overview of the phases and subtasks that will be required to complete the project.
 
@@ -9,7 +31,7 @@ An overview of the phases and subtasks that will be required to complete the pro
 - [x] Write simple unit tests for initial `InformationM`-only implementation
 - [x] Build the `InformationM`-only implementation
 - [x] Add initial styles
-- [ ] Write up installation instructions for README
+- [x] Write up installation instructions for README
 - [ ] Prep for first deployment to rebeccashoptaw.dev/archive-visualizer
 - [ ] First deploy!! Via `npm run deploy`
 
