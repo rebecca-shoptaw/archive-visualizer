@@ -2,11 +2,11 @@ import { describe, beforeEach, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 
 import ContentDescription from "../components/ContentDescription.tsx";
-import { MOCK_METADATA } from "../constants.ts";
+import { MOCK_METADATA, MOCK_RELATEDWORKS } from "../constants.ts";
 
 describe("Description rendering tests", () => {
   beforeEach(() => {
-    render(<ContentDescription data={MOCK_METADATA} />);
+    render(<ContentDescription data={MOCK_METADATA} relatedWorks={MOCK_RELATEDWORKS} />);
   });
 
   it("Should display the correct title", () => {
