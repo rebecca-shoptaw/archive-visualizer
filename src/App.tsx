@@ -1,9 +1,9 @@
-import Visualizer from "./components/Visualizer";
+import Homepage from "./components/Homepage";
 
 function App() {
   return (
     <>
-      <Visualizer />
+      <Homepage />
     </>
   );
 }
