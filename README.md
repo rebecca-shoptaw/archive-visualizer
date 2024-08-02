@@ -44,8 +44,8 @@ An overview of the phases and subtasks that will be required to complete the pro
 **Phase Three: Add More Content**
 - [ ] Add & test functionality to display reviews
 - [ ] Add & test functionality to display related works, likely using a carousel plugin
-- [ ] Build & test the homepage a new homepage to live at `/` where users can enter the ID manually and hit a button to go to the relevant URL
-- [ ] Style the homepage
+- [x] Build & test the homepage a new homepage to live at `/` where users can enter the ID manually and hit a button to go to the relevant URL
+- [x] Style the homepage
 
 **Phase Four: Refactor**
 - [ ] Clean up component structure as needed, dividing into sub-components and using custom hooks if necessary
