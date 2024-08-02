@@ -1,6 +1,8 @@
 # Archive Visualizer
 A new way to visualize content from the vast [Internet Archive](https://archive.org/) catalog.
 
+![UI preview gif](https://github.com/rebecca-shoptaw/archive-visualizer/blob/master/public/visualizer-video.gif)
+
 ## Getting Started Guide
 To get this repository up and running locally, you can simply run the following commands:
 ```
@@ -61,7 +63,7 @@ An overview of the phases and subtasks that will be required to complete the pro
 - [ ] Add animations, etc. as time allows
 
 **Last few desired add-ons:**
-- Include GIF in README
+- ~~Include GIF in README~~
 - Write up features and wish list in README
 - ~~Description / still for site preview~~
 - ~~Add alts to all images~~
