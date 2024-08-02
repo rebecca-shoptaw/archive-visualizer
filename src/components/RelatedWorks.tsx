@@ -8,7 +8,7 @@ const RelatedWorks = ({ data }: { data: RelatedWork[] }) => {
       <h3 className={utils.glowyText}>Related Works</h3>
       {data.map((work) => (
         <a
-          href={`/#${work._id}`}
+          href={`/archive-visualizer/#${work._id}`}
           className={styles.relatedWorks__work}
           key={work._id}
         >
