@@ -34,7 +34,7 @@ const IdentifierSearchForm = () => {
         <a
           id="search-button"
           className={styles.search__button}
-          href={`/archive-visualizer/${identifier}`}
+          href={`/archive-visualizer/#${identifier}`}
         >
           Go
         </a>
