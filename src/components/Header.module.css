@@ -9,6 +9,7 @@
   flex-direction: row;
   align-items: center;
   gap: 10px;
+  z-index: 3;
 }
 
 .header__image {
