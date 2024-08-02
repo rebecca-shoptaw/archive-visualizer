@@ -43,7 +43,7 @@ An overview of the phases and subtasks that will be required to complete the pro
 
 **Phase Three: Add More Content**
 - [ ] Add & test functionality to display reviews
-- [ ] Add & test functionality to display related works, likely using a carousel plugin
+- [x] Add & test functionality to display related works, likely using a carousel plugin
 - [x] Build & test the homepage a new homepage to live at `/` where users can enter the ID manually and hit a button to go to the relevant URL
 - [x] Style the homepage
 
