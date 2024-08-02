@@ -6,6 +6,7 @@ import ContentPlayer from "./ContentPlayer";
 import useFetchedData from "../hooks/useFetchedData";
 import ErrorPage from "./ErrorPage";
 import Header from "./Header";
+import { Helmet } from "react-helmet";
 
 const Visualizer = () => {
   const { id } = useParams();
@@ -13,6 +14,14 @@ const Visualizer = () => {
 
   return (
     <>
+      <Helmet>
+        <title>
+          {metadata
+            ? `${metadata.title} | Archive Visualizer`
+            : "Archive Visualizer"}{" "}
+          |{" "}
+        </title>
+      </Helmet>
       <Header />
       {error ? (
         <ErrorPage />
