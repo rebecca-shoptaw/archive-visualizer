@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./IdentifierSearchForm.module.css";
+import utils from '../styles/utils.module.css';
 
 const IdentifierSearchForm = () => {
   const [identifier, setIdentifier] = useState("");
@@ -9,7 +10,6 @@ const IdentifierSearchForm = () => {
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
-      console.log("entered!");
       const submitBtn = document.getElementById(
         "search-button"
       ) as HTMLAnchorElement;
@@ -33,7 +33,7 @@ const IdentifierSearchForm = () => {
         />
         <a
           id="search-button"
-          className={styles.search__button}
+          className={utils.customButton}
           href={`/archive-visualizer/#${identifier}`}
         >
           Go

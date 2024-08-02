@@ -30,20 +30,3 @@
   flex-shrink: 0;
   flex-basis: 0;
 }
-
-.search__button {
-  text-decoration: none;
-  background-color: transparent;
-  border: 1px solid var(--archive-white);
-  border-radius: 2px;
-  color: var(--archive-white);
-  padding: 3px 10px;
-  transition-property: background-color, color;
-  transition-duration: 0.3s;
-}
-
-.search__button:hover {
-  cursor: pointer;
-  background-color: var(--archive-white);
-  color: var(--archive-light-gray);
-}
