@@ -21,9 +21,9 @@ describe("Description rendering tests", () => {
     expect(screen.getByText(/1958/i)).toBeInTheDocument();
   });
 
-  it("Should display the correct description", () => {
+  it("Should display the correct description", async () => {
     expect(
-      screen.getByText(/InformationM Test Description/i)
+      await screen.findByText(/InformationM Test Description/i)
     ).toBeInTheDocument();
   });
 });

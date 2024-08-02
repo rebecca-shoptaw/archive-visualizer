@@ -1,6 +1,5 @@
 import { MetadataObject } from "../types";
-import renderParsedHTML from "../utils/renderParsedHTML";
-import toPunctuatedString from "../utils/toPunctuatedString";
+import {renderParsedHTML, toPunctuatedString} from "../utils/utils.ts";
 import styles from "./ContentDescription.module.css";
 
 const ContentDescription = ({ data }: { data: MetadataObject }) => {
@@ -16,7 +15,7 @@ const ContentDescription = ({ data }: { data: MetadataObject }) => {
       {data.director && <p>Directed by {toPunctuatedString(data.director)}</p>}
       {data.creator && <p>Created by {toPunctuatedString(data.creator)}</p>}
       {data.publisher && <p>Published by {toPunctuatedString(data.publisher)}</p>}
-      <p id="full-description"></p>
+      <p id="full-description">{data.description}</p>
     </section>
   );
 };

@@ -20,6 +20,10 @@ const Visualizer = () => {
         if (data.metadata) {
           setMetadata(data.metadata);
         } else setError(true);
+
+        if (data.files_count > 1) {
+          console.log("playlist");
+        }
       })
       .catch((err) => {
         console.log(err);

@@ -1,7 +1,7 @@
 import { MetadataObject } from "../types";
 import styles from "./ContentMetadata.module.css";
 import { INCLUDE_KEYS } from "../constants";
-import toPunctuatedString from "../utils/toPunctuatedString";
+import {toPunctuatedString} from "../utils/utils.ts";
 
 const ContentMetadata = ({ data }: { data: MetadataObject }) => {
   return (
