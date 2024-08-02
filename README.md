@@ -48,15 +48,15 @@ An overview of the phases and subtasks that will be required to complete the pro
 - [x] Style the homepage
 
 **Phase Four: Refactor**
-- [ ] Clean up component structure as needed, dividing into sub-components and using custom hooks if necessary
-- [ ] Improve accessibility where possible
-- [ ] Incorporate more tests, including fetch mocking
+- [x] Clean up component structure as needed, dividing into sub-components and using custom hooks if necessary
+- [x] Improve accessibility where possible
+- [x] Incorporate more tests
 
 **Phase Five: Bells and Whistles**
 - [ ] Bulk up project README write-up
 - [ ] Add custom rendering to detect/style license url
 - [x] Add custom rendering for array metadata
 - [ ] Add snazzy loading indicators
-- [ ] Add custom titles for each page via `react-helmet`
+- [x] Add custom titles for each page via `react-helmet`
 - [ ] Add animations, etc. as time allows
 
