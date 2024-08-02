@@ -5,6 +5,7 @@ import ContentMetadata from "./ContentMetadata";
 import ContentPlayer from "./ContentPlayer";
 import useFetchedData from "../hooks/useFetchedData";
 import ErrorPage from "./ErrorPage";
+import Header from "./Header";
 
 const Visualizer = () => {
   const { id } = useParams();
@@ -12,6 +13,7 @@ const Visualizer = () => {
 
   return (
     <>
+      <Header />
       {error ? (
         <ErrorPage />
       ) : (
