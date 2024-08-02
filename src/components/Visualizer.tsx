@@ -4,6 +4,7 @@ import ContentDescription from "./ContentDescription";
 import ContentMetadata from "./ContentMetadata";
 import ContentPlayer from "./ContentPlayer";
 import useFetchedData from "../hooks/useFetchedData";
+import IdentifierSearchForm from "./IdentifierSearchForm";
 
 const Visualizer = () => {
   const { id } = useParams();
@@ -13,7 +14,10 @@ const Visualizer = () => {
     <main>
       <section className={styles.visualizer}>
         {error ? (
-          <p>Oh no! We couldn't find that content.</p>
+          <>
+            <p>Oh no! We couldn't find that content. Try another search?</p>
+            <IdentifierSearchForm />
+          </>
         ) : metadata && id ? (
           <>
             <ContentPlayer
