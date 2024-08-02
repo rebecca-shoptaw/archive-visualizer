@@ -1,6 +1,7 @@
 import { MetadataObject } from "../types";
-import {renderParsedHTML, toPunctuatedString} from "../utils/utils.ts";
+import { renderParsedHTML, toPunctuatedString } from "../utils/utils.ts";
 import styles from "./ContentDescription.module.css";
+import utils from "../styles/utils.module.css";
 
 const ContentDescription = ({ data }: { data: MetadataObject }) => {
   if (data.description) {
@@ -9,12 +10,14 @@ const ContentDescription = ({ data }: { data: MetadataObject }) => {
 
   return (
     <section className={styles.description}>
-      <h2 className={styles.description__title}>
+      <h2 className={utils.glowyText}>
         {data.title} ({data.date || data.publicdate})
       </h2>
       {data.creator && <p>By {toPunctuatedString(data.creator)}</p>}
       {data.director && <p>Directed by {toPunctuatedString(data.director)}</p>}
-      {data.publisher && <p>Published by {toPunctuatedString(data.publisher)}</p>}
+      {data.publisher && (
+        <p>Published by {toPunctuatedString(data.publisher)}</p>
+      )}
       <p id="full-description"></p>
     </section>
   );

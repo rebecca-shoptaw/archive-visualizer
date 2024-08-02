@@ -1,0 +1,14 @@
+.glowyText {
+  margin-top: 0px;
+  text-shadow: var(--archive-blue) 0px 0 10px;
+}
+
+.customLink {
+  color: var(--archive-blue);
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.customLink:hover {
+  opacity: 0.75;
+}
