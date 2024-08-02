@@ -17,11 +17,10 @@ const useFetchedData = (id: string | undefined) => {
         return res.json();
       })
       .then((data) => {
-        if (data.metadata) {
+        if (!data.metadata || !data.files_count || data.files_count < 1) {
+          setError(true);
+        } else {
           setMetadata(data.metadata);
-        } else setError(true);
-
-        if (data.files_count) {
           setFilesCount(data.files_count);
         }
       })
