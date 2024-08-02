@@ -38,8 +38,8 @@ An overview of the phases and subtasks that will be required to complete the pro
 - [x] Adjust unit tests as needed to account for new variable structure
 - [x] Install `React-Router` and restructure components to use URL parameters
 - [x] Incorporate fail safety
-- [ ] Add & test functionality and new components for more item types, such as audio files, books, etc.
-- [ ] Add fail safety for un-renderable item types (if needed)
+- [x] Add & test functionality and new components for more item types, such as audio files, books, etc.
+- [x] Add fail safety for un-renderable item types (if needed)
 
 **Phase Three: Add More Content**
 - [ ] Add & test functionality to display reviews

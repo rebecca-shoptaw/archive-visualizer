@@ -15,7 +15,7 @@ const ContentDescription = ({ data }: { data: MetadataObject }) => {
       {data.creator && <p>By {toPunctuatedString(data.creator)}</p>}
       {data.director && <p>Directed by {toPunctuatedString(data.director)}</p>}
       {data.publisher && <p>Published by {toPunctuatedString(data.publisher)}</p>}
-      <p id="full-description">{data.description}</p>
+      <p id="full-description"></p>
     </section>
   );
 };

@@ -21,8 +21,7 @@ describe("HTML rendering tests", () => {
 
   it("Should correctly insert the given text as inner HTML", async () => {
     renderParsedHTML("testing", "test-div");
-  
-      expect(await screen.findByText('testing')).toBeInTheDocument();
+    expect(await screen.findByText('testing')).toBeInTheDocument();
 
   });
 
