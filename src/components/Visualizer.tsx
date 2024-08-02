@@ -10,7 +10,7 @@ import { Helmet } from "react-helmet";
 
 const Visualizer = () => {
   const { id } = useParams();
-  const { error, metadata, filesCount } = useFetchedData(id);
+  const { error, metadata, filesCount, relatedWorks } = useFetchedData(id);
 
   return (
     <>
@@ -36,7 +36,7 @@ const Visualizer = () => {
                   filesCount={filesCount}
                 />
                 <section className={styles.visualizer__info}>
-                  <ContentDescription data={metadata} />
+                  <ContentDescription data={metadata} relatedWorks={relatedWorks} />
                   <ContentMetadata data={metadata} />
                 </section>
               </>

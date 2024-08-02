@@ -1,9 +1,16 @@
-import { MetadataObject } from "../types";
+import { MetadataObject, RelatedWork } from "../types";
 import { renderParsedHTML, toPunctuatedString } from "../utils/utils.ts";
 import styles from "./ContentDescription.module.css";
 import utils from "../styles/utils.module.css";
+import RelatedWorks from "./RelatedWorks.tsx";
 
-const ContentDescription = ({ data }: { data: MetadataObject }) => {
+const ContentDescription = ({
+  data,
+  relatedWorks,
+}: {
+  data: MetadataObject;
+  relatedWorks: null | RelatedWork[];
+}) => {
   if (data.description) {
     renderParsedHTML(data.description as string, "full-description");
   }
@@ -19,6 +26,7 @@ const ContentDescription = ({ data }: { data: MetadataObject }) => {
         <p>Published by {toPunctuatedString(data.publisher)}</p>
       )}
       <p id="full-description"></p>
+      {relatedWorks && <RelatedWorks data={relatedWorks} />}
     </section>
   );
 };

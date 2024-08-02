@@ -1,4 +1,4 @@
-import { MetadataObject } from "./types";
+import { MetadataObject, RelatedWork } from "./types";
 
 // List of all keys to render in the metadata section, if a corresponding value exists for the work
 export const INCLUDE_KEYS: string[] = [
@@ -52,3 +52,23 @@ export const MOCK_METADATA: MetadataObject = {
   whisper_asr_module_version: "20230805.01",
   ccnum: "asr",
 };
+
+export const MOCK_RELATEDWORKS: RelatedWork[] = [
+  {
+    _score: 60.04525,
+    _id: "match_your_mood",
+    _source: {
+      title: ["Match Your Mood"],
+      publicdate: ["2003-05-19T12:36:30Z"],
+    },
+  },
+  {
+    _score: 59.771683,
+    _id: "ControlY1950",
+    _source: {
+      creatorSorter: ["coronet instructional films"],
+      title: ["Control Your Emotions"],
+      publicdate: ["2002-07-16T00:00:00Z"],
+    },
+  },
+];
