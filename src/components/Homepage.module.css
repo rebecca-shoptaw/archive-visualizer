@@ -8,6 +8,11 @@
   gap: 10px;
 }
 
+.homepage__logo {
+  width: 100px;
+  filter: drop-shadow(var(--archive-light-blue) 0px 0 30px);
+}
+
 .homepage__heading {
   margin: 0px;
 }

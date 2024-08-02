@@ -6,6 +6,7 @@ const Homepage = () => {
 
   return (
     <main className={styles.homepage}>
+      <img className={styles.homepage__logo} src='./visualizer-icon.png' alt="Blue telescope icon" />
       <h2 className={styles.homepage__heading}>
         Hello and welcome to <span className={utils.glowyText}>Visualizer</span>
       </h2>
