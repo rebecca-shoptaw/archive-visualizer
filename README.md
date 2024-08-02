@@ -64,5 +64,5 @@ An overview of the phases and subtasks that will be required to complete the pro
 - Include GIF in README
 - Write up features and wish list in README
 - ~~Description / still for site preview~~
-- Add alts to all images
+- ~~Add alts to all images~~
 - Fade in result and home screen if easy

@@ -14,6 +14,7 @@ const RelatedWorks = ({ data }: { data: RelatedWork[] }) => {
         >
           <img
             src={`https://archive.org/services/img/${work._id}`}
+            alt={`Image for ${work._id}`}
             className={styles.work__image}
             data-testid={`${work._id}-img`}
           />

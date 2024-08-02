@@ -4,7 +4,7 @@ import utils from "../styles/utils.module.css";
 const Header = () => {
   return (
     <header className={styles.header}>
-      <img src="./visualizer-icon.png" className={styles.header__image} />
+      <img src="./visualizer-icon.png" className={styles.header__image} alt="Blue telescope icon" />
       <a
         href="/archive-visualizer/"
         className={[utils.glowyText, styles.header__title].join(" ")}
