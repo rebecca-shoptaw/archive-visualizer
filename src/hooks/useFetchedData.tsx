@@ -4,6 +4,7 @@ import { MetadataObject } from "../types";
 const useFetchedData = (id: string | undefined) => {
   const [error, setError] = useState(false);
   const [metadata, setMetadata] = useState<null | MetadataObject>(null);
+  const [filesCount, setFilesCount] = useState(1);
 
   useEffect(() => {
     if (!id) {
@@ -19,6 +20,10 @@ const useFetchedData = (id: string | undefined) => {
         if (data.metadata) {
           setMetadata(data.metadata);
         } else setError(true);
+
+        if (data.files_count) {
+          setFilesCount(data.files_count);
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -26,7 +31,7 @@ const useFetchedData = (id: string | undefined) => {
       });
   }, [id]);
 
-  return { error, metadata };
+  return { error, metadata, filesCount };
 };
 
 export default useFetchedData;

@@ -7,7 +7,7 @@ import useFetchedData from "../hooks/useFetchedData";
 
 const Visualizer = () => {
   const { id } = useParams();
-  const {error, metadata} = useFetchedData(id);
+  const { error, metadata, filesCount } = useFetchedData(id);
 
   return (
     <main>
@@ -16,7 +16,11 @@ const Visualizer = () => {
           <p>Oh no! We couldn't find that content.</p>
         ) : metadata && id ? (
           <>
-            <ContentPlayer contentId={id} />
+            <ContentPlayer
+              contentId={id}
+              mediaType={metadata.mediatype as string}
+              filesCount={filesCount}
+            />
             <section className={styles.visualizer__info}>
               <ContentDescription data={metadata} />
               <ContentMetadata data={metadata} />
