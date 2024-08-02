@@ -10,7 +10,7 @@ const ErrorPage = () => {
     <main>
       <section className={styles.visualizer}>
         <p>Oh no! We couldn't find that content.</p>
-        <a href="/" className={utils.customButton}>
+        <a href="/archive-visualizer/" className={utils.customButton}>
           Try Again
         </a>
       </section>
