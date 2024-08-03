@@ -8,7 +8,7 @@ import { HOMEPAGE_PATH } from "../constants";
  * Maps over the related works data to render each work
  * with its image, title/author/publish-date as available,
  * wrapped in a link to view it via a new visualizer.
- * 
+ *
  * @param props Full related works data object
  * @returns A list of related works, each in its own clickable box
  */
@@ -18,7 +18,7 @@ const RelatedWorks = ({ data }: { data: RelatedWork[] }) => {
       <h3 className={utils.glowyText}>Related Works</h3>
       {data.map((work) => (
         <a
-          href={`${HOMEPAGE_PATH}/#${work._id}`}
+          href={`${HOMEPAGE_PATH}#${work._id}`}
           className={styles.relatedWorks__work}
           key={work._id}
         >
@@ -35,7 +35,9 @@ const RelatedWorks = ({ data }: { data: RelatedWork[] }) => {
                 {work._source.creatorSorter}
               </p>
             )}
-            {work._source.publicdate && <p className={styles.work__details}>{work._source.publicdate}</p>}
+            {work._source.publicdate && (
+              <p className={styles.work__details}>{work._source.publicdate}</p>
+            )}
           </section>
         </a>
       ))}
