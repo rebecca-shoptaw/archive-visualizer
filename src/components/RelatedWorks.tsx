@@ -1,6 +1,7 @@
 import { RelatedWork } from "../types";
 import styles from "./RelatedWorks.module.css";
 import utils from "../styles/utils.module.css";
+import { HOMEPAGE_PATH } from "../constants";
 
 const RelatedWorks = ({ data }: { data: RelatedWork[] }) => {
   return (
@@ -8,7 +9,7 @@ const RelatedWorks = ({ data }: { data: RelatedWork[] }) => {
       <h3 className={utils.glowyText}>Related Works</h3>
       {data.map((work) => (
         <a
-          href={`/archive-visualizer/#${work._id}`}
+          href={`${HOMEPAGE_PATH}/#${work._id}`}
           className={styles.relatedWorks__work}
           key={work._id}
         >

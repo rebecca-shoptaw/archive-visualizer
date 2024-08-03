@@ -1,5 +1,7 @@
 import { MetadataObject, RelatedWork } from "./types";
 
+export const HOMEPAGE_PATH = '/archive-visualizer/'
+
 // List of all keys to render in the metadata section, if a corresponding value exists for the work
 export const INCLUDE_KEYS: string[] = [
   "date",

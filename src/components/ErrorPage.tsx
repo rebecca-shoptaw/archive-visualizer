@@ -1,6 +1,9 @@
+import { useRouteError } from "react-router-dom";
+
 import styles from "./Visualizer.module.css";
 import utils from "../styles/utils.module.css";
-import { useRouteError } from "react-router-dom";
+
+import { HOMEPAGE_PATH } from "../constants";
 
 const ErrorPage = () => {
   const error = useRouteError();
@@ -10,7 +13,7 @@ const ErrorPage = () => {
     <main>
       <section className={styles.visualizer}>
         <p>Oh no! We couldn't find that content.</p>
-        <a href="/archive-visualizer/" className={utils.customButton}>
+        <a href={HOMEPAGE_PATH} className={utils.customButton}>
           Try Again
         </a>
       </section>

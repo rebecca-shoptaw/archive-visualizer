@@ -1,7 +1,11 @@
 import { describe, it, beforeEach, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 
-import { toPunctuatedString, renderParsedHTML } from "../utils/utils";
+import {
+  toPunctuatedString,
+  renderParsedHTML,
+  linkBtnToEnterKey,
+} from "../utils/utils";
 
 describe("String punctuation unit tests", () => {
   it("Should correctly turn a string array into a comma separated list", () => {
@@ -21,12 +25,31 @@ describe("HTML rendering tests", () => {
 
   it("Should correctly insert the given text as inner HTML", async () => {
     renderParsedHTML("testing", "test-div");
-    expect(await screen.findByText('testing')).toBeInTheDocument();
-
+    expect(await screen.findByText("testing")).toBeInTheDocument();
   });
 
-  it('Should correctly render stringified HTML as HTML', async() => {
+  it("Should correctly render stringified HTML as HTML", async () => {
     renderParsedHTML(`<button>test</button>`, "test-div");
-    expect(await screen.findByRole('button')).toBeInTheDocument();
+    expect(await screen.findByRole("button")).toBeInTheDocument();
+  });
+});
+
+describe("Click button on enter tests", () => {
+  beforeEach(() => {
+    const testFunction = () => {
+      const btn = document.getElementById("test-btn");
+      if (btn) btn.innerHTML = "testing";
+    };
+    render(<a id="test-btn" data-testid="test-btn" onClick={testFunction}></a>);
+  });
+
+  it("Should click the specified button on enter", async () => {
+    linkBtnToEnterKey("test-btn");
+    const linkEl = screen.getByTestId("test-btn");
+
+    if (linkEl) {
+      fireEvent.keyDown(linkEl, { key: "Enter" });
+      expect(await screen.findByText("testing")).toBeInTheDocument();
+    }
   });
 });

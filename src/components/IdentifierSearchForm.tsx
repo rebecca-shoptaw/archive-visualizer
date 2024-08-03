@@ -1,23 +1,13 @@
-import { useState } from "react";
 import styles from "./IdentifierSearchForm.module.css";
-import utils from '../styles/utils.module.css';
+import utils from "../styles/utils.module.css";
+
+import { HOMEPAGE_PATH } from "../constants";
+import useDynamicIdentifier from "../hooks/useDynamicIdentifier";
+import { linkBtnToEnterKey } from "../utils/utils";
 
 const IdentifierSearchForm = () => {
-  const [identifier, setIdentifier] = useState("");
-  const handleChange = (e: { target: { value: string } }) => {
-    setIdentifier(e.target.value);
-  };
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-      const submitBtn = document.getElementById(
-        "search-button"
-      ) as HTMLAnchorElement;
-      if (submitBtn) {
-        submitBtn.click();
-      }
-    }
-  });
+  const {identifier, handleIdentifierChange} = useDynamicIdentifier();
+  linkBtnToEnterKey('search-button');
 
   return (
     <section className={styles.search} data-testid="search-form">
@@ -28,13 +18,13 @@ const IdentifierSearchForm = () => {
         <input
           id="identifier"
           className={styles.search__input}
-          onChange={handleChange}
+          onChange={handleIdentifierChange}
           autoFocus
         />
         <a
           id="search-button"
           className={utils.customButton}
-          href={`/archive-visualizer/#${identifier}`}
+          href={`${HOMEPAGE_PATH}#${identifier}`}
         >
           Go
         </a>

@@ -1,5 +1,6 @@
-import { MetadataObject } from "../types";
 import styles from "./ContentMetadata.module.css";
+
+import { MetadataObject } from "../types";
 import { INCLUDE_KEYS } from "../constants";
 import {toPunctuatedString} from "../utils/utils.ts";
 

@@ -1,16 +1,13 @@
-import { MetadataObject, RelatedWork } from "../types";
-import { renderParsedHTML, toPunctuatedString } from "../utils/utils.ts";
 import styles from "./ContentDescription.module.css";
 import utils from "../styles/utils.module.css";
+
+import { ContentDescriptionProps } from "../types";
+import { renderParsedHTML, toPunctuatedString } from "../utils/utils.ts";
+
 import RelatedWorks from "./RelatedWorks.tsx";
 
-const ContentDescription = ({
-  data,
-  relatedWorks,
-}: {
-  data: MetadataObject;
-  relatedWorks: null | RelatedWork[];
-}) => {
+const ContentDescription = (props: ContentDescriptionProps) => {
+  const { data, relatedWorks } = props;
   if (data.description) {
     renderParsedHTML(data.description as string, "full-description");
   }

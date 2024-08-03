@@ -1,14 +1,9 @@
 import styles from "./Visualizer.module.css";
 
-const ContentPlayer = ({
-  contentId,
-  mediaType,
-  filesCount,
-}: {
-  contentId: string;
-  mediaType: string;
-  filesCount: number;
-}) => {
+import { ContentPlayerProps } from "../types";
+
+const ContentPlayer = (props: ContentPlayerProps) => {
+  const { contentId, mediaType, filesCount } = props;
   let contentUrl = `https://archive.org/embed/${contentId}`;
 
   if (mediaType === "audio" && filesCount > 1) {
