@@ -1,10 +1,19 @@
 import styles from "./ContentMetadata.module.css";
 
-import { MetadataObject } from "../types";
+import { ContentMetadataProps } from "../types";
 import { INCLUDE_KEYS } from "../constants";
-import {toPunctuatedString} from "../utils/utils.ts";
+import { toPunctuatedString } from "../utils/utils.ts";
 
-const ContentMetadata = ({ data }: { data: MetadataObject }) => {
+/**
+ * Renders the content metadata in key-value pairs.
+ * Uses the INCLUDE_KEYS content to decide which of the key/value pairs to render (if present).
+ * 
+ * @param props Full metadata object for the work
+ * @returns Content metadata component, with metadata rendered in key-value pairs
+ */
+const ContentMetadata = (props: ContentMetadataProps) => {
+  const { data } = props;
+
   return (
     <section className={styles.metadata}>
       {INCLUDE_KEYS.map(

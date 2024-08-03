@@ -6,6 +6,13 @@ import { renderParsedHTML, toPunctuatedString } from "../utils/utils.ts";
 
 import RelatedWorks from "./RelatedWorks.tsx";
 
+/**
+ * Renders the full description and related works for a given work
+ * 
+ * @param props The full metadata and related works data for the work
+ * @returns Content description component with the title, top-line credits, full description
+ * and related works
+ */
 const ContentDescription = (props: ContentDescriptionProps) => {
   const { data, relatedWorks } = props;
   if (data.description) {

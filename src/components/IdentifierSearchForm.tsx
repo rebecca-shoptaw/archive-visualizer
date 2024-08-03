@@ -5,6 +5,14 @@ import { HOMEPAGE_PATH } from "../constants";
 import useDynamicIdentifier from "../hooks/useDynamicIdentifier";
 import { linkBtnToEnterKey } from "../utils/utils";
 
+/**
+ * Renders a search "form" by dynamically altering the link href
+ * to match the user-inputted identifier.
+ * 
+ * Uses a simple util function to make the link fire on-enter.
+ * 
+ * @returns A minimal, reusable identifier search form
+ */
 const IdentifierSearchForm = () => {
   const {identifier, handleIdentifierChange} = useDynamicIdentifier();
   linkBtnToEnterKey('search-button');

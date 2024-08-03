@@ -16,3 +16,5 @@ export type ContentDescriptionProps = {
   data: MetadataObject;
   relatedWorks: null | RelatedWork[];
 };
+
+export type ContentMetadataProps = { data: MetadataObject };

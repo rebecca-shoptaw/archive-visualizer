@@ -5,6 +5,12 @@ import utils from "../styles/utils.module.css";
 
 import { HOMEPAGE_PATH } from "../constants";
 
+/**
+ * Error page to be rendered if a work is not found
+ * or the router errors.
+ * 
+ * @returns A full-page component with an error message and a button to return to the homepage
+ */
 const ErrorPage = () => {
   const error = useRouteError();
   console.error(error);

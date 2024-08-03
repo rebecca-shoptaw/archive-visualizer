@@ -1,11 +1,7 @@
 import Homepage from "./components/Homepage";
 
 function App() {
-  return (
-    <>
-      <Homepage />
-    </>
-  );
+  return <Homepage />;
 }
 
 export default App;

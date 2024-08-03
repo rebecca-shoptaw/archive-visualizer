@@ -2,6 +2,14 @@ import styles from "./Visualizer.module.css";
 
 import { ContentPlayerProps } from "../types";
 
+/**
+ * Renders an iframe to play the selected work.
+ * If the work is an audio file, uses the file count to determine
+ * whether to load it as a playlist.
+ * 
+ * @param props The work identifier (string), media type (string) and file count (number)
+ * @returns Iframe to play or show the work's media.
+ */
 const ContentPlayer = (props: ContentPlayerProps) => {
   const { contentId, mediaType, filesCount } = props;
   let contentUrl = `https://archive.org/embed/${contentId}`;

@@ -3,8 +3,13 @@ import utils from "../styles/utils.module.css";
 
 import IdentifierSearchForm from "./IdentifierSearchForm";
 
+/**
+ * Renders a homepage for the site, including a large logo, 
+ * a site title/description, and a mini search form.
+ * 
+ * @returns A simple homepage component
+ */
 const Homepage = () => {
-
   return (
     <main className={styles.homepage}>
       <img className={styles.homepage__logo} src='./visualizer-icon.png' alt="Blue telescope icon" />

@@ -1,8 +1,17 @@
-import { RelatedWork } from "../types";
 import styles from "./RelatedWorks.module.css";
 import utils from "../styles/utils.module.css";
+
+import { RelatedWork } from "../types";
 import { HOMEPAGE_PATH } from "../constants";
 
+/**
+ * Maps over the related works data to render each work
+ * with its image, title/author/publish-date as available,
+ * wrapped in a link to view it via a new visualizer.
+ * 
+ * @param props Full related works data object
+ * @returns A list of related works, each in its own clickable box
+ */
 const RelatedWorks = ({ data }: { data: RelatedWork[] }) => {
   return (
     <section className={styles.relatedWorks}>
