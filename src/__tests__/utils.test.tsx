@@ -6,6 +6,7 @@ import {
   renderParsedHTML,
   linkBtnToEnterKey,
   toHashedPath,
+  toCapitalized,
 } from "../utils/utils";
 
 describe("String punctuation unit tests", () => {
@@ -64,5 +65,17 @@ describe("Dynamic path tests", () => {
 
   it("Should leave the base URl unchanged if no ID is provided", () => {
     expect(toHashedPath("")).toStrictEqual("/archive-visualizer/");
+  });
+});
+
+describe("Proper name capitalization tests", () => {
+  it("Should correctly capitalize a single name", () => {
+    expect(toCapitalized("john smith")).toStrictEqual("John Smith");
+  });
+
+  it("Should correctly capitalize a comma-separated list", () => {
+    expect(toCapitalized("john smith, jane doe")).toStrictEqual(
+      "John Smith, Jane Doe"
+    );
   });
 });
