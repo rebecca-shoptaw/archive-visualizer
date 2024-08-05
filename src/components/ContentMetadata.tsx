@@ -2,12 +2,12 @@ import styles from "./ContentMetadata.module.css";
 
 import { ContentMetadataProps } from "../types";
 import { INCLUDE_KEYS } from "../constants";
-import { toPunctuatedString } from "../utils/utils.ts";
+import { toDateString, toPunctuatedString } from "../utils/utils.ts";
 
 /**
  * Renders the content metadata in key-value pairs.
  * Uses the INCLUDE_KEYS content to decide which of the key/value pairs to render (if present).
- * 
+ *
  * @param props Full metadata object for the work
  * @returns Content metadata component, with metadata rendered in key-value pairs
  */
@@ -22,7 +22,9 @@ const ContentMetadata = (props: ContentMetadataProps) => {
             <p key={key}>
               <span className={styles.metadata__key}>{key.toUpperCase()}</span>:{" "}
               <span className={styles.metadata__value}>
-                {toPunctuatedString(data[key])}
+                {key === "publicdate"
+                  ? toDateString(data[key], { showTime: true })
+                  : toPunctuatedString(data[key])}
               </span>
             </p>
           )

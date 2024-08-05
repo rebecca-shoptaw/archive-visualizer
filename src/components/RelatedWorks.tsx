@@ -4,6 +4,7 @@ import utils from "../styles/utils.module.css";
 import { RelatedWork } from "../types";
 import {
   toCapitalized,
+  toDateString,
   toHashedPath,
   toPunctuatedString,
 } from "../utils/utils";
@@ -41,7 +42,9 @@ const RelatedWorks = ({ data }: { data: RelatedWork[] }) => {
               </p>
             )}
             {work._source.publicdate && (
-              <p className={styles.work__details}>{work._source.publicdate}</p>
+              <p className={styles.work__details}>
+                {toDateString(work._source.publicdate)}
+              </p>
             )}
           </section>
         </a>

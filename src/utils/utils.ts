@@ -64,3 +64,29 @@ export const toHashedPath = (contentId: string) =>
  */
 export const toCapitalized = (words: string) =>
   words.replace(/(^\w|\s\w|[("-]\w)/gi, (letter) => letter.toUpperCase());
+
+/**
+ * Formats given ISO date string for improved legibility.
+ * Used for PUBLIC_DATE in regular metadata and date in related works.
+ * Takes an optional showTime parameter to determine whether time stamp should be included,
+ * and removes unnecessary "at" from full string.
+ *
+ * If the provided string is not in the correct format, it returns the string unchanged.
+ *
+ * @param date The date to be translated
+ * @param options A boolean to determine whether the time stamp should be shown
+ * @returns A formatted date, i.e. "January 7, 1991 11:13 AM"
+ */
+export const toDateString = (
+  date: string | string[] | number[],
+  options?: { showTime: boolean }
+) => {
+  const dateString = new Date(date.toString()).toLocaleString("en-us", {
+    dateStyle: "long",
+    timeStyle: options && options.showTime ? "short" : undefined,
+  });
+
+  if (dateString !== "Invalid Date") {
+    return dateString.replace(/ at/, "");
+  } else return date.toString();
+};
