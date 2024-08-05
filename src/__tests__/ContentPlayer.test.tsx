@@ -9,7 +9,7 @@ describe("Content player rendering tests", () => {
       <ContentPlayer
         contentId="InformationM"
         contentTitle="Information Machine, The"
-        mediaType="movies"
+        type="MovingImage"
       />
     );
   });
@@ -40,7 +40,7 @@ describe("Audio player rendering tests", () => {
       <ContentPlayer
         contentId="TestPlaylist"
         contentTitle="Test Playlist"
-        mediaType="audio"
+        type="sound"
       />
     );
   });

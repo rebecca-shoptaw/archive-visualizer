@@ -9,7 +9,7 @@ export type RelatedWork = {
 export type ContentPlayerProps = {
   contentId: string;
   contentTitle: string;
-  mediaType: string;
+  type: string;
 };
 
 export type AudioPlayerProps = {

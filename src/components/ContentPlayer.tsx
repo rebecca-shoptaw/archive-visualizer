@@ -13,10 +13,12 @@ import AudioPlayer from "./AudioPlayer";
  * @returns Iframe to play or show the work's media.
  */
 const ContentPlayer = (props: ContentPlayerProps) => {
-  const { contentId, contentTitle, mediaType } = props;
+  const { contentId, contentTitle, type } = props;
   const contentUrl = `https://archive.org/embed/${contentId}`;
 
-  return mediaType !== "audio" ? (
+  return type === "sound" ? (
+    <AudioPlayer contentId={contentId} contentTitle={contentTitle} />
+  ) : (
     <iframe
       src={contentUrl}
       width="100%"
@@ -25,8 +27,6 @@ const ContentPlayer = (props: ContentPlayerProps) => {
       title={`Player for ${contentTitle}`}
       allowFullScreen
     />
-  ) : (
-    <AudioPlayer contentId={contentId} contentTitle={contentTitle} />
   );
 };
 
