@@ -40,7 +40,9 @@ const Visualizer = () => {
                 <ContentPlayer
                   contentId={id}
                   contentTitle={metadata.title as string}
-                  type={metadata.type as string}
+                  type={
+                    (metadata.type as string) || (metadata.mediatype as string)
+                  }
                 />
                 <section className={styles.visualizer__info}>
                   <ContentDescription

@@ -16,7 +16,7 @@ const ContentPlayer = (props: ContentPlayerProps) => {
   const { contentId, contentTitle, type } = props;
   const contentUrl = `https://archive.org/embed/${contentId}`;
 
-  return type === "sound" ? (
+  return type === "sound" || type === "audio" ? (
     <AudioPlayer contentId={contentId} contentTitle={contentTitle} />
   ) : (
     <iframe
