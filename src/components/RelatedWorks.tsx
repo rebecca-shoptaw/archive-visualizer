@@ -2,7 +2,11 @@ import styles from "./RelatedWorks.module.css";
 import utils from "../styles/utils.module.css";
 
 import { RelatedWork } from "../types";
-import { toHashedPath } from "../utils/utils";
+import {
+  toCapitalized,
+  toHashedPath,
+  toPunctuatedString,
+} from "../utils/utils";
 
 /**
  * Maps over the related works data to render each work
@@ -32,7 +36,7 @@ const RelatedWorks = ({ data }: { data: RelatedWork[] }) => {
             <p className={styles.work__title}>{work._source.title}</p>
             {work._source.creatorSorter && (
               <p className={styles.work__details}>
-                {work._source.creatorSorter}
+                {toCapitalized(toPunctuatedString(work._source.creatorSorter))}
               </p>
             )}
             {work._source.publicdate && (

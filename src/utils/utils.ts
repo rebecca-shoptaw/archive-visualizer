@@ -6,7 +6,7 @@ import { HOMEPAGE_PATH } from "../constants";
  * @param value The metadata value to be punctuated
  * @returns The value as a comma-separated list, if it is an array, or the value itself if it is not
  */
-export const toPunctuatedString = (value: string | string[]) =>
+export const toPunctuatedString = (value: string | string[] | number[]) =>
   Array.isArray(value) ? value.join(", ") : value;
 
 /***
@@ -50,3 +50,22 @@ export const linkBtnToEnterKey = (btnId: string) => {
  */
 export const toHashedPath = (contentId: string) =>
   contentId !== "" ? `${HOMEPAGE_PATH}#${contentId}` : HOMEPAGE_PATH;
+
+/**
+ * Capitalizes a word or series of lower case words as Proper Names
+ * Used to transform the author names in the related works section
+ *
+ * @param words String of lower case words to be capitalized
+ * @returns New string of correctly capitalized words
+ */
+export const toCapitalized = (words: string) => {
+  const wordsArr = words.split(" ");
+  return wordsArr
+    .map((word) => {
+      const firstLetter = word.charAt(0);
+      const otherLetters = word.slice(1);
+
+      return firstLetter.toUpperCase() + otherLetters;
+    })
+    .join(" ");
+};
