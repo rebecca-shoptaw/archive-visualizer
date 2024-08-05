@@ -52,20 +52,15 @@ export const toHashedPath = (contentId: string) =>
   contentId !== "" ? `${HOMEPAGE_PATH}#${contentId}` : HOMEPAGE_PATH;
 
 /**
- * Capitalizes a word or series of lower case words as Proper Names
- * Used to transform the author names in the related works section
+ * Capitalizes a word or series of lower case words as Proper Names.
+ * Used to transform the author names in the related works section.
+ * Regex replace logic finds letter to be capitalized by matching:
+ * - Letters at the start of the string
+ * - Letters immediately after a space
+ * - Letters immediately after a (, " or -, as in Smith (John), John "Johnny" Smith, or John Smith-Jones
  *
  * @param words String of lower case words to be capitalized
  * @returns New string of correctly capitalized words
  */
-export const toCapitalized = (words: string) => {
-  const wordsArr = words.split(" ");
-  return wordsArr
-    .map((word) => {
-      const firstLetter = word.charAt(0);
-      const otherLetters = word.slice(1);
-
-      return firstLetter.toUpperCase() + otherLetters;
-    })
-    .join(" ");
-};
+export const toCapitalized = (words: string) =>
+  words.replace(/(^\w|\s\w|[("-]\w)/gi, (letter) => letter.toUpperCase());
