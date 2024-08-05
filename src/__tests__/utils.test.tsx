@@ -7,6 +7,7 @@ import {
   linkBtnToEnterKey,
   toHashedPath,
   toCapitalized,
+  toDateString,
 } from "../utils/utils";
 
 describe("String punctuation unit tests", () => {
@@ -88,6 +89,32 @@ describe("Proper name capitalization tests", () => {
   });
 
   it("Should correctly capitalize a name in quotes", () => {
-    expect(toCapitalized('john "johnny" smith')).toStrictEqual('John "Johnny" Smith');
+    expect(toCapitalized('john "johnny" smith')).toStrictEqual(
+      'John "Johnny" Smith'
+    );
+  });
+});
+
+describe("Date formatting tests", () => {
+  it("Should correctly format a date with no time stamp visible", () => {
+    expect(
+      toDateString("1991-01-07 11:13:30", { showTime: false })
+    ).toStrictEqual("January 7, 1991");
+  });
+
+  it("Should correctly format a date with a time stamp", () => {
+    expect(
+      toDateString("1991-01-07 11:13:30", { showTime: true })
+    ).toStrictEqual("January 7, 1991 11:13 AM");
+  });
+
+  it("Should default to not showing a time", () => {
+    expect(toDateString("1991-01-07 11:13:30")).toStrictEqual(
+      "January 7, 1991"
+    );
+  });
+
+  it("Should return the original string unchanged if the format is incorrect", () => {
+    expect(toDateString("cat")).toStrictEqual("cat");
   });
 });
