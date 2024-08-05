@@ -8,8 +8,13 @@ export type RelatedWork = {
 
 export type ContentPlayerProps = {
   contentId: string;
+  contentTitle: string;
   mediaType: string;
-  filesCount: number;
+};
+
+export type AudioPlayerProps = {
+  contentId: string;
+  contentTitle: string;
 };
 
 export type ContentDescriptionProps = {

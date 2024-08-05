@@ -1,11 +1,16 @@
 import { describe, beforeEach, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 
-import AudioPlayer from "../components/AudioPlayer.tsx";
+import AudioPlayer from "../components/AudioPlayer";
 
 describe("Audio player rendering tests", () => {
   beforeEach(() => {
-    render(<AudioPlayer contentId="count_montecristo_1308_librivox" />);
+    render(
+      <AudioPlayer
+        contentId="count_montecristo_1308_librivox"
+        contentTitle="The Count of Monte Cristo"
+      />
+    );
   });
 
   it("Should render an iframe", () => {
@@ -38,5 +43,14 @@ describe("Audio player rendering tests", () => {
     expect(
       screen.getByTestId("count_montecristo_1308_librivox-img")
     ).toBeInTheDocument();
+  });
+
+  it("Should include the correct alt text for the work's image", () => {
+    const img = screen.getByTestId(
+      "count_montecristo_1308_librivox-img"
+    ) as HTMLImageElement;
+    if (img) {
+      expect(img.alt).toStrictEqual("Image for The Count of Monte Cristo");
+    }
   });
 });

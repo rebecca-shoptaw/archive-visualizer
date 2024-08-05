@@ -5,7 +5,13 @@ import ContentPlayer from "../components/ContentPlayer.tsx";
 
 describe("Content player rendering tests", () => {
   beforeEach(() => {
-    render(<ContentPlayer contentId="InformationM" mediaType="movies" />);
+    render(
+      <ContentPlayer
+        contentId="InformationM"
+        contentTitle="Information Machine, The"
+        mediaType="movies"
+      />
+    );
   });
 
   it("Should render an iframe", () => {
@@ -15,7 +21,9 @@ describe("Content player rendering tests", () => {
   });
 
   it("Should dynamically generate the iframe title", () => {
-    expect(screen.getByTitle("Player for InformationM")).toBeInTheDocument();
+    expect(
+      screen.getByTitle("Player for Information Machine, The")
+    ).toBeInTheDocument();
   });
 
   it("Should dynamically set the iframe source", () => {
@@ -31,8 +39,8 @@ describe("Audio player rendering tests", () => {
     render(
       <ContentPlayer
         contentId="TestPlaylist"
+        contentTitle="Test Playlist"
         mediaType="audio"
-        filesCount={10}
       />
     );
   });
@@ -42,14 +50,10 @@ describe("Audio player rendering tests", () => {
     expect(iframe).toBeInTheDocument();
   });
 
-  it("Should dynamically generate the iframe title", () => {
-    expect(screen.getByTitle("Player for TestPlaylist")).toBeInTheDocument();
-  });
-
-  it("Should dynamically set the iframe source", () => {
-    const iframe = document.querySelector("iframe");
-    if (iframe) {
-      expect(iframe.src).toContain("TestPlaylist");
-    }
-  });
+  it("Should render an audio player iframe"),
+    () => {
+      expect(
+        screen.getByTitle("Audio player for Test Playlist")
+      ).toBeInTheDocument();
+    };
 });

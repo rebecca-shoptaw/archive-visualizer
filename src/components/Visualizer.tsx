@@ -17,12 +17,12 @@ import ContentMetadata from "./ContentMetadata";
  * (all from a custom hook), to display either:
  * - The error page, if there is no metadata for the provided identifier
  * - The content player, description and metadata for the provided identifier
- * 
+ *
  * @returns A component that contains all the necessary logic and components to display an IA work
  */
 const Visualizer = () => {
   const { id } = useParams();
-  const { error, metadata, relatedWorks, filesCount } = useFetchedData(id);
+  const { error, metadata, relatedWorks } = useFetchedData(id);
 
   return (
     <>
@@ -39,8 +39,8 @@ const Visualizer = () => {
               <>
                 <ContentPlayer
                   contentId={id}
+                  contentTitle={metadata.title as string}
                   mediaType={metadata.mediatype as string}
-                  filesCount={filesCount}
                 />
                 <section className={styles.visualizer__info}>
                   <ContentDescription

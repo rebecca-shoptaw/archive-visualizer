@@ -6,16 +6,14 @@ import { MetadataObject, RelatedWork } from "../types";
  * Fetches all necessary data for rendering content, storing values in state as needed
  * - The error state is used to determine if the fetch was successful, so as to load the "Not found" vs. the content page
  * - The metadata and related works objects provide all the necessary info to render the content and its related works
- * - The files count is used to determine whether the content should be shown as a playlist
  *
  * @param id Internet Archive identifier for the content
- * @returns Error state, metadata object, related works object, and files count
+ * @returns Error state, metadata object and related works object
  */
 const useFetchedData = (id: string | undefined) => {
   const [error, setError] = useState(false);
   const [metadata, setMetadata] = useState<null | MetadataObject>(null);
   const [relatedWorks, setRelatedWorks] = useState<null | []>(null);
-  const [filesCount, setFilesCount] = useState(1);
 
   useEffect(() => {
     if (!id) {
@@ -34,7 +32,6 @@ const useFetchedData = (id: string | undefined) => {
           setError(true);
         } else {
           setMetadata(data.metadata);
-          setFilesCount(data.files_count);
         }
       })
       .catch((err) => {
@@ -59,7 +56,7 @@ const useFetchedData = (id: string | undefined) => {
       });
   }, [id]);
 
-  return { error, metadata, relatedWorks, filesCount };
+  return { error, metadata, relatedWorks };
 };
 
 export default useFetchedData;

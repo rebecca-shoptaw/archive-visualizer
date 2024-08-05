@@ -29,7 +29,7 @@ describe("Identifier search form tests", () => {
     const searchBtn = document.getElementById(
       "search-button"
     ) as HTMLAnchorElement;
-    expect(searchBtn.href).toMatch(/archive-visualizer\/#$/i);
+    expect(searchBtn.href).toMatch(/archive-visualizer\/$/i);
   });
 
   it("Should link to the identifier if an identifier has been entered", () => {
