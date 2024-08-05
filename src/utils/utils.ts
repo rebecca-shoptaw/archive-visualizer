@@ -10,8 +10,9 @@ export const toPunctuatedString = (value: string | string[] | number[]) =>
   Array.isArray(value) ? value.join(", ") : value;
 
 /***
- * Renders stringified HTML as true HTML in a specified div
- * Used to render content descriptions correctly
+ * Renders stringified HTML as true HTML in a specified div.
+ * Used to render content descriptions correctly.
+ * Also switches '\n' to <br /> to render new lines correctly.
  *
  * @param HTMLString The stringified HTML
  * @param targetId The ID of the div where the HTML should be rendered
@@ -19,7 +20,7 @@ export const toPunctuatedString = (value: string | string[] | number[]) =>
 export const renderParsedHTML = (HTMLString: string, targetId: string) => {
   const targetElement = document.getElementById(targetId);
   if (targetElement) {
-    targetElement.innerHTML = HTMLString;
+    targetElement.innerHTML = HTMLString.replace(/\n/g, "<br />");
   }
 };
 
