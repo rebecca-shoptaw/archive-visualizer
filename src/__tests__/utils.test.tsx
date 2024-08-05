@@ -5,6 +5,7 @@ import {
   toPunctuatedString,
   renderParsedHTML,
   linkBtnToEnterKey,
+  toHashedPath,
 } from "../utils/utils";
 
 describe("String punctuation unit tests", () => {
@@ -51,5 +52,17 @@ describe("Click button on enter tests", () => {
       fireEvent.keyDown(linkEl, { key: "Enter" });
       expect(await screen.findByText("testing")).toBeInTheDocument();
     }
+  });
+});
+
+describe("Dynamic path tests", () => {
+  it("Should add the specified ID to the path if provided", async () => {
+    expect(toHashedPath("InformationM")).toStrictEqual(
+      "/archive-visualizer/#InformationM"
+    );
+  });
+
+  it("Should leave the base URl unchanged if no ID is provided", () => {
+    expect(toHashedPath("")).toStrictEqual("/archive-visualizer/");
   });
 });
