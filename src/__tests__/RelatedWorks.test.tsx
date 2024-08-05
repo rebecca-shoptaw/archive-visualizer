@@ -3,6 +3,7 @@ import { render, screen } from "@testing-library/react";
 
 import RelatedWorks from "../components/RelatedWorks.tsx";
 import { MOCK_RELATEDWORKS } from "../constants.ts";
+import { toCapitalized, toPunctuatedString } from "../utils/utils.ts";
 
 describe("Metadata rendering tests", () => {
   beforeEach(() => {
@@ -21,7 +22,7 @@ describe("Metadata rendering tests", () => {
     MOCK_RELATEDWORKS.forEach((work) => {
       if (work._source.creatorSorter) {
         expect(
-          screen.getByText(work._source.creatorSorter.toString())
+          screen.getByText(toCapitalized(toPunctuatedString(work._source.creatorSorter)))
         ).toBeInTheDocument();
       }
     });

@@ -78,4 +78,16 @@ describe("Proper name capitalization tests", () => {
       "John Smith, Jane Doe"
     );
   });
+
+  it("Should correctly capitalize a name in parentheses", () => {
+    expect(toCapitalized("smith (john)")).toStrictEqual("Smith (John)");
+  });
+
+  it("Should correctly capitalize a hyphenated name", () => {
+    expect(toCapitalized("john smith-jones")).toStrictEqual("John Smith-Jones");
+  });
+
+  it("Should correctly capitalize a name in quotes", () => {
+    expect(toCapitalized('john "johnny" smith')).toStrictEqual('John "Johnny" Smith');
+  });
 });
