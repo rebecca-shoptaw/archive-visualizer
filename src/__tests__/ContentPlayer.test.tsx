@@ -1,17 +1,11 @@
 import { describe, beforeEach, it, expect } from "vitest";
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 import ContentPlayer from "../components/ContentPlayer.tsx";
 
-describe("Video player rendering tests", () => {
+describe("Content player rendering tests", () => {
   beforeEach(() => {
-    render(
-      <ContentPlayer
-        contentId="InformationM"
-        mediaType="movies"
-        filesCount={1}
-      />
-    );
+    render(<ContentPlayer contentId="InformationM" mediaType="movies" />);
   });
 
   it("Should render an iframe", () => {
@@ -56,27 +50,6 @@ describe("Audio player rendering tests", () => {
     const iframe = document.querySelector("iframe");
     if (iframe) {
       expect(iframe.src).toContain("TestPlaylist");
-    }
-  });
-
-  it("Should add a playlist parameter if file count is greater than 1", () => {
-    const iframe = document.querySelector("iframe");
-
-    if (iframe) {
-      expect(iframe.src).toContain("&playlist=1");
-    }
-  });
-
-  it("Should not add a playlist parameter if file count is 1", () => {
-    cleanup();
-    render(
-      <ContentPlayer contentId="TestAudio" mediaType="audio" filesCount={1} />
-    );
-
-    const iframe = document.querySelector("iframe");
-
-    if (iframe) {
-      expect(iframe.src).not.toContain("&playlist=1");
     }
   });
 });
