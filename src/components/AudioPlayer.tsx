@@ -17,8 +17,8 @@ const AudioPlayer = (props: AudioPlayerProps) => {
       />
       <iframe
         src={contentUrl}
-        height="480"
-        className={styles.visualizer__contentPlayer}
+        width="480"
+        className={styles.audioPlayer__playlist}
         title={`Audio player for ${contentTitle}`}
         allowFullScreen
       />

@@ -1,0 +1,30 @@
+.audioPlayer {
+  width: 100%;
+  min-height: 480px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.audioPlayer__image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--archive-light-gray);
+}
+
+.audioPlayer__playlist {
+  border: none;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 700px) {
+  .audioPlayer {
+    flex-direction: column;
+    justify-content: center;
+    min-height: auto;
+  }
+}
