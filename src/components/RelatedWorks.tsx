@@ -25,6 +25,7 @@ const RelatedWorks = ({ data }: { data: RelatedWork[] }) => {
           href={toHashedPath(work._id)}
           className={styles.relatedWorks__work}
           key={work._id}
+          onClick={() => window.scrollTo(0, 0)}
         >
           <img
             src={`https://archive.org/services/img/${work._id}`}

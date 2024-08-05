@@ -20,6 +20,7 @@ html {
   background-color: var(--archive-black);
   color: var(--archive-white);
   font-family: "DM Sans", "sans-serif";
+  scroll-behavior: smooth;
 }
 
 body {
