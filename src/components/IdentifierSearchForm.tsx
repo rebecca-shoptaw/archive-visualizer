@@ -1,9 +1,8 @@
 import styles from "./IdentifierSearchForm.module.css";
 import utils from "../styles/utils.module.css";
 
-import { HOMEPAGE_PATH } from "../constants";
 import useDynamicIdentifier from "../hooks/useDynamicIdentifier";
-import { linkBtnToEnterKey } from "../utils/utils";
+import { linkBtnToEnterKey, toHashedPath } from "../utils/utils";
 
 /**
  * Renders a search "form" by dynamically altering the link href
@@ -32,7 +31,7 @@ const IdentifierSearchForm = () => {
         <a
           id="search-button"
           className={utils.customButton}
-          href={`${HOMEPAGE_PATH}#${identifier}`}
+          href={toHashedPath(identifier)}
         >
           Go
         </a>

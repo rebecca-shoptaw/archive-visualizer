@@ -2,7 +2,7 @@ import styles from "./RelatedWorks.module.css";
 import utils from "../styles/utils.module.css";
 
 import { RelatedWork } from "../types";
-import { HOMEPAGE_PATH } from "../constants";
+import { toHashedPath } from "../utils/utils";
 
 /**
  * Maps over the related works data to render each work
@@ -18,7 +18,7 @@ const RelatedWorks = ({ data }: { data: RelatedWork[] }) => {
       <h3 className={utils.glowyText}>Related Works</h3>
       {data.map((work) => (
         <a
-          href={`${HOMEPAGE_PATH}#${work._id}`}
+          href={toHashedPath(work._id)}
           className={styles.relatedWorks__work}
           key={work._id}
         >
