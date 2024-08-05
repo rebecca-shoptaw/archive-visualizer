@@ -135,6 +135,8 @@ I had expected that I would have to use the media type to generate a separate `i
 
 The one place it does struggle is with audio files, and one wishlist item for the future of this project would be to build and style a separate audio player, which uses the work image next to the playlist like the IA details page. One day!
 
+> Edit: I couldn't help myself! The specialized audio player implementation is now complete, tested in `AudioPlayer.test.tsx` then built in `AudioPlayer.tsx`, and replaces the initial conditional playlist rendering
+
 I did end up adding fail safety for `collections` (via `useFetchedData`) as one of the final steps, when I realized that they could appear as related works.
 
 ## Phase Three: Adding More Content
