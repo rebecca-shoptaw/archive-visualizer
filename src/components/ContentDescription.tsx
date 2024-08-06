@@ -16,7 +16,7 @@ import RelatedWorks from "./RelatedWorks.tsx";
 const ContentDescription = (props: ContentDescriptionProps) => {
   const { data, relatedWorks } = props;
   if (data.description) {
-    renderParsedHTML(data.description as string, "full-description");
+    renderParsedHTML(toPunctuatedString(data.description), "full-description");
   }
 
   return (
