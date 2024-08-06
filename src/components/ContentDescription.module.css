@@ -3,13 +3,3 @@
   flex-shrink: 0;
   flex-basis: 0;
 }
-
-.description a {
-  color: var(--archive-blue);
-  text-decoration: none;
-  transition: opacity 0.3s;
-}
-
-.description a:hover {
-  opacity: 0.75;
-}

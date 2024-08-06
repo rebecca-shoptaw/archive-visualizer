@@ -7,14 +7,14 @@ import { linkBtnToEnterKey, toHashedPath } from "../utils/utils";
 /**
  * Renders a search "form" by dynamically altering the link href
  * to match the user-inputted identifier.
- * 
+ *
  * Uses a simple util function to make the link fire on-enter.
- * 
+ *
  * @returns A minimal, reusable identifier search form
  */
 const IdentifierSearchForm = () => {
-  const {identifier, handleIdentifierChange} = useDynamicIdentifier();
-  linkBtnToEnterKey('search-button');
+  const { identifier, handleIdentifierChange } = useDynamicIdentifier();
+  linkBtnToEnterKey("search-button");
 
   return (
     <section className={styles.search} data-testid="search-form">
@@ -31,7 +31,9 @@ const IdentifierSearchForm = () => {
         <a
           id="search-button"
           className={utils.customButton}
+          role="button"
           href={toHashedPath(identifier)}
+          title={`Go to Visualizer${identifier ? ` for ${identifier}` : ""}`}
         >
           Go
         </a>

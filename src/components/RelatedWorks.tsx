@@ -22,8 +22,7 @@ const RelatedWorks = ({ data }: { data: RelatedWork[] }) => {
     <section className={styles.relatedWorks}>
       <h3 className={utils.glowyText}>Related Works</h3>
       {data.map((work) => (
-        <a
-          href={toHashedPath(work._id)}
+        <section
           className={styles.relatedWorks__work}
           key={work._id}
           onClick={() => window.scrollTo(0, 0)}
@@ -35,7 +34,9 @@ const RelatedWorks = ({ data }: { data: RelatedWork[] }) => {
             data-testid={`${work._id}-img`}
           />
           <section className={styles.work__info}>
-            <p className={styles.work__title}>{work._source.title}</p>
+            <a href={toHashedPath(work._id)} className={utils.customLink} title={`Go to visualizer for ${work._source.title}`}>
+              <p className={styles.work__title}>{work._source.title}</p>
+            </a>
             {work._source.creatorSorter && (
               <p className={styles.work__details}>
                 {toCapitalized(toPunctuatedString(work._source.creatorSorter))}
@@ -47,7 +48,7 @@ const RelatedWorks = ({ data }: { data: RelatedWork[] }) => {
               </p>
             )}
           </section>
-        </a>
+        </section>
       ))}
     </section>
   );

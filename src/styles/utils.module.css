@@ -5,12 +5,14 @@
 
 .customLink {
   color: var(--archive-blue);
-  text-decoration: none;
-  transition: opacity 0.3s;
+  text-decoration: underline;
+  transition-property: opacity, text-decoration;
+  transition-duration: 0.3s;
 }
 
-.customLink:hover {
-  opacity: 0.75;
+.customLink:hover,
+.customLink:focus {
+  text-decoration: underline #000000;
 }
 
 .customButton {
@@ -24,8 +26,10 @@
   transition-duration: 0.3s;
 }
 
-.customButton:hover {
+.customButton:hover,
+.customButton:focus {
   cursor: pointer;
   background-color: var(--archive-white);
   color: var(--archive-light-gray);
+  text-decoration: none;
 }
